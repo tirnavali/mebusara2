@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Mebusara</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+    <div>
+      <tr>
+        <td>Anasayfa</td> | <td>Vekiller</td> | 
+        <td>Partiler</td> | <td>Yasama Dönemleri</td> | 
+        <td><%= link_to "Proje Hakkında", :about_index %></td> | <td>Sorular</td></tr></div>
+    <%= yield %>
+    <%= link_to "Anasayfa", :elections %>
+  </body>
+</html>

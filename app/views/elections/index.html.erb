@@ -1,0 +1,45 @@
+<h1>Yasama Bilgileri (Seçimler)</h1>
+<table border="1">
+	<thead>
+		<tr>
+			<th>İl</th>
+			<th>İlin diğer adı</th>
+			<th>Adı</th>
+			<th>Diğer adı</th>
+			<th>Soyadı</th>
+			<th>Cinsiyet</th>
+			<th>Özgeçmiş</th>
+			<th>Doğum T.</th>			
+			<th>Ölüm T.</th>
+			<th>Yasama Dönemi</th>
+			<th>Başlangıç T.</th>
+			<th>Bitiş T.</th>				
+
+
+		</tr>
+	</thead>
+	<br>
+<% @elections.each do |e| %> 
+<tr>
+	<td><%= e.province %></td>
+	<td><%= e.other_province_name %></td>
+	<% mp = @mp.find(e.mp_id) %>
+	<td><%= link_to mp.name, mp %></td>
+	<td><%= link_to mp.name2, mp %></td>
+	<td><%= link_to mp.surname, mp %></td>
+	<td><%= link_to mp.gender, mp %></td>
+	<td><%= link_to mp.detail[0..50]+"...", mp %></td>
+	<td><%= link_to mp.birthdate.year, mp %></td>
+	<td><%= link_to mp.deaddate.year, mp %></td>
+
+	
+	<% period = @period.find(e.period_id) %>
+
+	<td><%=period.name%></td>
+	<td><%=period.startdate%></td>
+	<td><%=period.enddate%></td>
+	<td>Ayrıntılar</td>
+
+</tr>
+<% end %>
+</table>

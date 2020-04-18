@@ -1,0 +1,39 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @mp.name %>
+</p>
+
+<p>
+  <strong>Name2:</strong>
+  <%= @mp.name2 %>
+</p>
+
+<p>
+  <strong>Surname:</strong>
+  <%= @mp.surname %>
+</p>
+
+<p>
+  <strong>Gender:</strong>
+  <%= @mp.gender %>
+</p>
+
+<p>
+  <strong>Birthdate:</strong>
+  <%= @mp.birthdate %>
+</p>
+
+<p>
+  <strong>Deaddate:</strong>
+  <%= @mp.deaddate %>
+</p>
+
+<p>
+  <strong>Detail:</strong>
+  <%= @mp.detail %>
+</p>
+
+<%= link_to 'Edit', edit_mp_path(@mp) %> |
+<%= link_to 'Back', mps_path %>
