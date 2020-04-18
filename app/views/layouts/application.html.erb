@@ -12,8 +12,8 @@
   <body>
     <div>
       <tr>
-        <td>Anasayfa</td> | <td>Vekiller</td> | 
-        <td>Partiler</td> | <td>Yasama Dönemleri</td> | 
+        <td><%= link_to "Anasayfa", :root %></td> | <td><%= link_to "Vekiller", :mps %> </td> | 
+        <td><%= link_to "Partiler", :parties %></td> | <td><%= link_to "Yasama Dönemleri", :periods %></td> | 
         <td><%= link_to "Proje Hakkında", :about_index %></td> | <td>Sorular</td></tr></div>
     <%= yield %>
     <%= link_to "Anasayfa", :elections %>

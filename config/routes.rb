@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  root 'mps#index'
+  root 'elections#index'
   resources :tags
   resources :posts
   resources :periods
