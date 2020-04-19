@@ -1,14 +1,13 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Periods</h1>
-
-<table>
+<h1>Yasama Dönemleri</h1>
+<table class="table table-striped">
   <thead>
     <tr>
-      <th>Name</th>
-      <th>Startdate</th>
-      <th>Enddate</th>
-      <th colspan="3"></th>
+      <th scope="col">Dönem adı</th>
+      <th scope="col">Başlama Tarihi</th>
+      <th scope="col">Bitiş Tarihi</th>
+      <th scope="col" colspan="3"></th>
     </tr>
   </thead>
 
@@ -18,9 +17,9 @@
         <td><%= period.name %></td>
         <td><%= period.startdate %></td>
         <td><%= period.enddate %></td>
-        <td><%= link_to 'Show', period %></td>
-        <td><%= link_to 'Edit', edit_period_path(period) %></td>
-        <td><%= link_to 'Destroy', period, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Ayrıntılar', period %></td>
+        <td><%= link_to 'Düzenle', edit_period_path(period) %></td>
+        <td><%= link_to 'Sil', period, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>
@@ -28,4 +27,4 @@
 
 <br>
 
-<%= link_to 'New Period', new_period_path %>
+<%= link_to 'Yeni Dönem Ekle', new_period_path %>

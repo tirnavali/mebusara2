@@ -1,14 +1,14 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Parties</h1>
+<h1>Siyasi Partiler</h1>
 
-<table>
+<table class="table table-striped">
   <thead>
     <tr>
-      <th>Name</th>
-      <th>Shortname</th>
-      <th>Establishdate</th>
-      <th>Logo</th>
+      <th>Parti Adı</th>
+      <th>Kısaltma</th>
+      <th>Kuruluş Tarihi</th>
+      <th></th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -20,9 +20,9 @@
         <td><%= party.shortname %></td>
         <td><%= party.establishdate %></td>
         <td><%= party.logo %></td>
-        <td><%= link_to 'Show', party %></td>
-        <td><%= link_to 'Edit', edit_party_path(party) %></td>
-        <td><%= link_to 'Destroy', party, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Ayrıntılar', party %></td>
+        <td><%= link_to 'Düzenle', edit_party_path(party) %></td>
+        <td><%= link_to 'Sil', party, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>
@@ -30,4 +30,4 @@
 
 <br>
 
-<%= link_to 'New Party', new_party_path %>
+<%= link_to 'Yeni Parti Ekle', new_party_path %>

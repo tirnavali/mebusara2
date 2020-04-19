@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  root 'elections#index'
+  root 'welcome#index'
   resources :tags
   resources :posts
   resources :periods
@@ -7,5 +7,6 @@ Rails.application.routes.draw do
   resources :mps
   resources :elections
   resources :about
+  resources :welcome
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end
