@@ -9,13 +9,26 @@
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
-  <body>
-    <div>
+  <nav class="navbar navbar-expand-lg navbar-light bg-light" style="background-color: orange;">
+    <div class="collapse navbar-collapse">
       <tr>
-        <td><%= link_to "Anasayfa", :root %></td> | <td><%= link_to "Vekiller", :mps %> </td> | 
-        <td><%= link_to "Partiler", :parties %></td> | <td><%= link_to "Yasama Dönemleri", :periods %></td> | 
-        <td><%= link_to "Proje Hakkında", :about_index %></td> | <td>Sorular</td></tr></div>
+        <ul class="navbar-nav nav-pills">
+        <li class="nav-item">
+          <%= link_to "Anasayfa", :root, :class => "nav-link" %></li> 
+          <td><%= link_to "Vekiller", :mps,  :class => "nav-link" %> </td>
+          <td><%= link_to "Partiler", :parties, :class => "nav-link" %></td>
+        <td><%= link_to "Yasama Dönemleri", :periods,  :class => "nav-link" %></td>
+        <td><%= link_to "Proje Hakkında", :about_index,  :class => "nav-link" %></td> 
+        <td><a href="#" class="nav-link">Sorular</a></td>
+        </ul>
+      </tr>
+    </div>
+  </nav>
+  <body class="">
+    <div class="container">
+    
     <%= yield %>
     <%= link_to "Anasayfa", :elections %>
+    </div>
   </body>
 </html>
