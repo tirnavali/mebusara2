@@ -20,11 +20,23 @@
         <td><%= link_to "Yasama Dönemleri", :periods,  :class => "nav-link" %></td>
         <td><%= link_to "Proje Hakkında", :about_index,  :class => "nav-link" %></td> 
         <td><a href="#" class="nav-link">Sorular</a></td>
+        <td>
+          <% if current_user %>
+            Logged in as <%=current_user.email %>.
+            <%= link_to "Çıkış", log_out_path %>
+            <% else %>
+            <%= link_to "Kaydol", sign_up_path %> veya 
+            <%= link_to "Giriş Yap", log_in_path %>
+            <% end %>
+        </td>
         </ul>
       </tr>
     </div>
   </nav>
   <body class="">
+    <% flash.each  do |name, msg| %>
+      <%= content_tag :div, msg, :id => "flash_#{name}" %>
+    <% end %>
     <div class="container">
     
     <%= yield %>
