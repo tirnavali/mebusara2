@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_04_18_132340) do
+ActiveRecord::Schema.define(version: 2020_04_20_124234) do
 
   create_table "elections", force: :cascade do |t|
     t.string "province"
@@ -89,6 +89,14 @@ ActiveRecord::Schema.define(version: 2020_04_18_132340) do
     t.integer "tag_id"
     t.index ["post_id"], name: "index_tags_posts_on_post_id"
     t.index ["tag_id"], name: "index_tags_posts_on_tag_id"
+  end
+
+  create_table "users", force: :cascade do |t|
+    t.string "email"
+    t.string "password_hash"
+    t.string "password_salt"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
   end
 
 end
