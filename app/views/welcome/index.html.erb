@@ -1,11 +1,25 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Mebusara</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+  <body>
 <br>
 
-<div class="jumbotron" >
+<div class="container jumbotron" >
   <h1 class="display-4">Hoşgeldiniz!</h1>
   <p class="lead">Bilginin çok değerli ve dağınık olduğu bir dünyada yaşıyoruz. Her gün katlanarak çoğalan veriler arasındaki anlamlı bilgilere ulaşmak giderek zorlaşıyor.</p>
   <p class="lead"> Amacımız bilgi kirliliğinin arttığı bir dünyada, güvenilir kaynaklardan bilgi uzmanları tarafından derlenmiş verilerin tüm araştırmacılara sunulmasıdır. </p>
   <hr class="my-4">
   <p>Mebusara, TBMM'nin kuruluşundan bugüne tüm üyelerinin çeşitli bilgilerine erişim sağlamayı amaçlamaktadır.
   Bu site aracılığı ile sunulan veriler kamuya açık bilgi kaynaklarından derlenmektedir.</p>
-  <a class="btn btn-primary btn-lg" href="#" role="button">Başlamak için tıkla</a>
+  <%=link_to 'Başlamak için tıkla', mps_path, :class =>"btn btn-primary btn-lg" %>
+  <!-- <a class="btn btn-primary btn-lg" href="#" role="button">Başlamak için tıkla</a> -->
 </div>
+</body>
+</html>
