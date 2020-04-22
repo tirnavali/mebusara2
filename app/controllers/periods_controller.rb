@@ -1,5 +1,6 @@
 class PeriodsController < ApplicationController
   before_action :set_period, only: [:show, :edit, :update, :destroy]
+  before_action :yetkili?, only: [:new, :create, :edit, :update, :destroy]
 
   # GET /periods
   # GET /periods.json

@@ -1,6 +1,6 @@
 class MpsController < ApplicationController
   before_action :set_mp, only: [:show, :edit, :update, :destroy]
-
+  before_action :yetkili?, only: [:new, :create, :edit, :update, :destroy]
   # GET /mps
   # GET /mps.json
   def index
@@ -14,8 +14,10 @@ class MpsController < ApplicationController
 
   # GET /mps/new
   def new
-    @mp = Mp.new
-    @party = Party
+    if yetkili?
+      @mp = Mp.new
+      @party = Party
+    end
   end
 
   # GET /mps/1/edit

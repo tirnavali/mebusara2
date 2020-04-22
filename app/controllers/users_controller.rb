@@ -1,4 +1,5 @@
 class UsersController < ApplicationController
+  before_action :yetkili?, only: [:new, :create, :edit, :update, :destroy]
   def new
   	@user = User.new
   end
