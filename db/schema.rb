@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_04_21_133024) do
+ActiveRecord::Schema.define(version: 2020_04_24_195524) do
 
   create_table "elections", force: :cascade do |t|
     t.string "province"
@@ -32,20 +32,6 @@ ActiveRecord::Schema.define(version: 2020_04_21_133024) do
     t.text "detail"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-  end
-
-  create_table "mps_parties", force: :cascade do |t|
-    t.integer "mps_id"
-    t.integer "parties_id"
-    t.index ["mps_id"], name: "index_mps_parties_on_mps_id"
-    t.index ["parties_id"], name: "index_mps_parties_on_parties_id"
-  end
-
-  create_table "mps_periods", force: :cascade do |t|
-    t.integer "mp_id"
-    t.integer "period_id"
-    t.index ["mp_id"], name: "index_mps_periods_on_mp_id"
-    t.index ["period_id"], name: "index_mps_periods_on_period_id"
   end
 
   create_table "parties", force: :cascade do |t|

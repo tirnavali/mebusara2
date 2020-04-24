@@ -50,7 +50,7 @@
     </div>
 
     <div>    
-      <%= form.collection_select :party_ids, @party.all, :id, :name,  {}, {multiple: true}%>
+      <%= form.collection_select :party_id, @mp.parties, :id, :name,  {}, {multiple: false}%>
     </div>
 
     <div class="actions ">

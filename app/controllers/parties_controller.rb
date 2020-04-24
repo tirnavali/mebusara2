@@ -1,6 +1,8 @@
+# frozen_string_literal: true
+
 class PartiesController < ApplicationController
-  before_action :set_party, only: [:show, :edit, :update, :destroy]
-  before_action :yetkili?, only: [:new, :create, :edit, :update, :destroy]
+  before_action :set_party, only: %i[show edit update destroy]
+  before_action :yetkili?, only: %i[new create edit update destroy]
   # GET /parties
   # GET /parties.json
   def index
@@ -9,8 +11,7 @@ class PartiesController < ApplicationController
 
   # GET /parties/1
   # GET /parties/1.json
-  def show
-  end
+  def show; end
 
   # GET /parties/new
   def new
@@ -18,8 +19,7 @@ class PartiesController < ApplicationController
   end
 
   # GET /parties/1/edit
-  def edit
-  end
+  def edit; end
 
   # POST /parties
   # POST /parties.json
@@ -62,13 +62,14 @@ class PartiesController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_party
-      @party = Party.find(params[:id])
-    end
 
-    # Only allow a list of trusted parameters through.
-    def party_params
-      params.require(:party).permit(:name, :shortname, :establishdate, :logo)
-    end
+  # Use callbacks to share common setup or constraints between actions.
+  def set_party
+    @party = Party.find(params[:id])
+  end
+
+  # Only allow a list of trusted parameters through.
+  def party_params
+    params.require(:party).permit(:name, :shortname, :establishdate, :logo)
+  end
 end
