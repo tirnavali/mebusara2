@@ -13,34 +13,36 @@
   <div class="form-group bg-light">
     <div class="form-row">
       <div class="field col-md-4">
-        <%= form.label :name %>
+        <%= form.label :name, "Ad" %>
         <%= form.text_field :name, :class => "form-control" %>
       </div>
 
       <div class="field col-md-4">
-        <%= form.label :name2 %>
+        <%= form.label :name2, "Diğer Ad" %>
         <%= form.text_field :name2,  :class => "form-control" %>
       </div>
 
       <div class="field col-md-4">
-        <%= form.label :surname %>
+        <%= form.label :surname, "Soyad" %>
         <%= form.text_field :surname,  :class => "form-control" %>
       </div>
     </div>
     <div class="form-row">
       <div class="field col-md-4">
-        <%= form.label :gender %>
-        <%= form.text_field :gender, :class => "form-control" %>
+        <%= form.label :gender, "Cinsiyet" %>        
+        <%#= form.text_field :gender, :class => "form-control" %>
+        <%= form.select :gender, ['Erkek', 'Kadın'], { include_blank: true }, class: "form-control" %>
+        <%#= form.select :gender, options_for_select([['Erkek', 'Erkek'], ['Kadın', 'Kadın']], form.object.gender) , { include_blank: true } %>
       </div>
-
-      <div class="field col-md-4">
+     
+       <div class="field col-md-4">
         <%= form.label :birthdate %>
         <%= form.date_select :birthdate, options = { :start_year => 1850 },  :class => "form-control" %>
       </div>
 
       <div class="field col-md-4">
         <%= form.label :deaddate %>
-        <%= form.date_select :deaddate, options = { :start_year => 1850 }, :class => "form-control"%>
+        <%= form.date_select :deaddate, options = { :start_year => 1850, include_blank: true, default: nil }, :class => "form-control"%>
       </div>
     </div>
 

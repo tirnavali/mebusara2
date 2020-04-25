@@ -12,17 +12,17 @@
     </div>
   <% end %>
 
-  <div class="field col-md-12">
+  <div class="field col-md-12 col-sm-12">
     <%= form.label :name, "Ad" %>
     <%= form.text_field :name, class: "form-control" %>
   </div>
 
-  <div class="field col-md-2">
+  <div class="field col-md-4 col-sm-4">
     <%= form.label :startdate, "Başlama Tarihi" %>
     <%= form.date_select :startdate, options = { :start_year => 1900 }, class: "form-control" %>
   </div>
 
-  <div class="field col-md-2">
+  <div class="field col-md-4 col-sm-4">
     <%= form.label :enddate, "Bitiş Tarihi" %>
     <%= form.date_select :enddate, options = { :start_year => 1900}, class: "form-control" %>
   </div>
