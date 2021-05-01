@@ -20,7 +20,7 @@ ActiveAdmin.register Mp do
       input :name
       input :name2
       input :surname
-      input :gender
+      input :gender, as: :radio, collection: ["Erkek", "Kadın"]
       input :birthdate, as: :datepicker,
                             datepicker_options: {
                               min_date: "1850-01-01",
