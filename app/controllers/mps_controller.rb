@@ -72,6 +72,7 @@ class MpsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def mp_params
-      params.require(:mp).permit(:name, :name2, :surname, :gender, :birthdate, :deaddate, :detail)
+      params.require(:mp).permit(:name, :name2, :surname, :gender, :birthdate, :deaddate, :detail,
+      parties_attributes[:party_id])
     end
 end

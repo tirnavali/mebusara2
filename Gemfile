@@ -1,9 +1,9 @@
 source 'https://rubygems.org'
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
-ruby '2.6.6'
+ruby '3.0.0'
 
-
+gem 'nokogiri', '~> 1.6', '>= 1.6.6.2'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 6.0.2', '>= 6.0.2.2'
 
@@ -27,6 +27,9 @@ gem 'bootstrap-sass', '~> 3.4', '>= 3.4.1'
 gem 'jquery-rails', '~> 4.3', '>= 4.3.5'
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'
+gem 'devise', '~> 4.7', '>= 4.7.3'
+
+gem 'activeadmin'
 
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.4.2', require: false
