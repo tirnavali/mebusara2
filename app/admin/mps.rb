@@ -5,7 +5,8 @@ ActiveAdmin.register Mp do
   #
   # Uncomment all parameters which should be permitted for assignment
   #
-  permit_params :name, :name2, :surname, :gender, :birthdate, :deaddate, :detail
+  permit_params :name, :name2, :surname, :gender, :birthdate, :deaddate, :detail,
+                elections_attributes:[:id, :period_id, :party_id, :province, :other_province_name, :_destroy]
   #
   # or
   #
@@ -39,6 +40,18 @@ ActiveAdmin.register Mp do
                             }
       input :detail
     end
+    inputs "Elections" do
+      has_many :elections,
+                new_record: "Add Election",
+                remove_election: "Remove Election",
+                allow_destroy: -> (e) {e} do |b|
+                b.input :period, as: :select, collection: Period.all
+                b.input :party, as: :select, collection: Party.all
+                b.input :province
+                b.input :other_province_name
+      end  
+    end
+
     
     f.actions
   end

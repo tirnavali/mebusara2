@@ -6,6 +6,7 @@ class Mp < ApplicationRecord
   has_many :elections
   has_many :periods, through: :elections
   has_many :parties, through: :elections
+  accepts_nested_attributes_for :elections, allow_destroy: true
 
   def olum_tarihi_dogum_tarihinden_kucuk_olamaz
     unless deaddate.nil?
