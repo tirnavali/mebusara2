@@ -5,8 +5,9 @@ ActiveAdmin.register Mp do
   #
   # Uncomment all parameters which should be permitted for assignment
   #
-  permit_params :name, :name2, :surname, :gender, :birthdate, :deaddate, :detail,
+  permit_params :name, :name2, :surname, :gender, :birthdate, :deaddate, :detail, job_ids: [], 
                 elections_attributes:[:id, :period_id, :party_id, :province, :other_province_name, :_destroy]
+                
   #
   # or
   #
@@ -39,6 +40,7 @@ ActiveAdmin.register Mp do
                               yearRange: "1850:#{Time.now.year}"
                             }
       input :detail
+      input :jobs
     end
     inputs "Elections" do
       has_many :elections,

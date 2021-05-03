@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :jobs
   devise_for :admin_users, ActiveAdmin::Devise.config
   ActiveAdmin.routes(self)
   get 'log_out' => "sessions#destroy", :as => "log_out"

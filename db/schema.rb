@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_05_01_202957) do
+ActiveRecord::Schema.define(version: 2021_05_03_213540) do
 
   create_table "active_admin_comments", force: :cascade do |t|
     t.string "namespace"
@@ -48,6 +48,20 @@ ActiveRecord::Schema.define(version: 2021_05_01_202957) do
     t.integer "party_id"
   end
 
+  create_table "jobs", force: :cascade do |t|
+    t.string "name"
+    t.string "related_term"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "jobs_mps", id: false, force: :cascade do |t|
+    t.integer "mp_id"
+    t.integer "job_id"
+    t.index ["job_id"], name: "index_jobs_mps_on_job_id"
+    t.index ["mp_id"], name: "index_jobs_mps_on_mp_id"
+  end
+
   create_table "mps", force: :cascade do |t|
     t.string "name"
     t.string "name2"
@@ -58,6 +72,7 @@ ActiveRecord::Schema.define(version: 2021_05_01_202957) do
     t.text "detail"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.integer "job_id"
   end
 
   create_table "parties", force: :cascade do |t|
