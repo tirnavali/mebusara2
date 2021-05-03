@@ -16,6 +16,27 @@ ActiveAdmin.register Mp do
   #   permitted << :other if params[:action] == 'create' && current_user.admin?
   #   permitted
   # end
+  show do
+    attributes_table do
+      row :name
+      row :name2
+      row :surname
+      row :gender
+      row :birthdate
+      row :deaddate
+      row :detail
+      table_for mp.jobs.order('name ASC') do
+        column "Jobs" do |job|
+          link_to job.name, [ :admin, job ]
+        end
+      end
+      table_for mp.periods do
+        column "Periods" do |period|
+          link_to period.name
+        end
+      end
+    end
+  end
 
   form title: 'New Mp' do |f|
     inputs do
