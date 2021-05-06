@@ -1,4 +1,7 @@
 Rails.application.routes.draw do
+  get 'search/index'
+  get 'search/query'
+  get 'search' => "search#new"
   resources :jobs
   devise_for :admin_users, ActiveAdmin::Devise.config
   ActiveAdmin.routes(self)
